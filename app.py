@@ -25,14 +25,14 @@ st.title("🧪 Loyalty A/B Test Dashboard")
 with st.sidebar:
     st.header("Filters")
     selected_group = st.selectbox("Select Group", options=["All"] + sorted(df['group'].unique().tolist()))
-    selected_tier = st.selectbox("Select Tier", options=["All"] + sorted(df['tier'].unique().tolist()))
+    selected_tier = st.selectbox("Select Tier", options=["All"] + sorted(df['loyalty_tier'].unique().tolist()))
     
     # Apply filters
     df_filtered = df.copy()
     if selected_group != "All":
         df_filtered = df_filtered[df_filtered['group'] == selected_group]
     if selected_tier != "All":
-        df_filtered = df_filtered[df_filtered['tier'] == selected_tier]
+        df_filtered = df_filtered[df_filtered['loyalty_tier'] == selected_tier]
 
 # Top KPIs
 col1, col2, col3 = st.columns(3)
