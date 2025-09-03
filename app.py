@@ -8,8 +8,8 @@ import joblib
 
 # Load the trained model and feature names
 try:
-    rf = joblib.load('./random_forest_model.pkl')
-    feature_names = joblib.load('./feature_names.pkl')
+    rf = joblib.load('./notebooks/random_forest_model.pkl')
+    feature_names = joblib.load('./notebooks/feature_names.pkl')
 except Exception as e:
     st.error(f"Error loading model files: {e}")
 
